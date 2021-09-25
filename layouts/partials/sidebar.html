@@ -1,43 +1,20 @@
 {{ $s := .Site.Params }}
 <aside class="sidebar">
   <section class="sidebar_inner">
-    {{- if $s.IntroDescription }}
-      {{- $author := $s.Author  }}
-      {{- $showAuthorPhoto := false }}
-      {{- $fullAuthor := reflect.IsMap $author }}
-      {{- if $fullAuthor }}
-        {{-  if $author.photo }}
-          {{- $showAuthorPhoto = true }}
-        {{- end }}
-      {{- end }}
-      {{- if $showAuthorPhoto }}
-        <div class="author_header">
-          <img src="{{ absURL $author.photo }}" alt="{{ $author.name }} photo">
-          <h2>{{  $author.name }}</h2>
-        </div>
-      {{- else }}
-        <h2>{{  if $fullAuthor }}{{ $author.name }}{{ else }}{{ $author }}{{ end }}</h2>
-      {{- end }}
-      <div class="author_bio">
-        {{ markdownify $s.IntroDescription }}
-      </div>
-      {{- if ( ne $s.introURL false ) }}
-      {{- $r := T "read_more" }}
-      <a href='{{ absLangURL (default "about/" $s.introURL) }}' class="button mt-1" role="button" title='{{ $r }}'>{{ $r }}</a>
-      {{- end }}
-    {{- end }}
+    {{ $label := T "contact_us" }}
+    <h2>{{ $label }}</h2>
     {{ $company := .Site.Data.company }}
     {{- range $contact := $company.contacts }}
       <h4>{{ $contact.name }}</h4>
         <div>
-	  {{- if $contact.address }}
-	    <li>{{ $contact.address }}</li>
-	  {{- end }}
-	  <li>{{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}{{- end }}</li>
-	  {{- if $contact.work_time }}
-	    <li>{{ $contact.work_time }}</li>
-	  {{- end }}
-	</div>
+          {{- if $contact.address }}
+            <li>{{ $contact.address }}</li>
+          {{- end }}
+          <li>{{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}{{- end }}</li>
+          {{- if $contact.work_time }}
+            <li>{{ $contact.work_time }}</li>
+          {{- end }}
+        </div>
     {{- end }}
     <br>
     {{- with $company.weibo }}
