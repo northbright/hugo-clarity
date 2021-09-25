@@ -4,3 +4,4 @@ A [Hugo](https://gohugo.io/) theme based on [Hugo Clarity](https://github.com/ch
 
 ## Customization
 * Show company contact information on side bar
+* Show ICP 备案 and 公安备案 for China users
