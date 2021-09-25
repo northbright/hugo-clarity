@@ -1,5 +1,6 @@
 {{- $s := .Site.Params }}
 {{ $t := .Site.Title }}
+{{- $company := .Site.Data.company }}
 {{- if or .Params.enableMathNotation $s.enableMathNotation }}
   {{ partialCached "math" . }}
 {{- end }}
@@ -8,7 +9,15 @@
 <footer class="footer">
   <div class="footer_inner wrap pale">
     <img src='{{ absURL (default $defaultFooterLogo $s.footerLogo) }}' class="icon icon_2 transparent" alt="{{ $t }}">
-    <p>{{ T "copyright" }}{{ with $s.since }}&nbsp;{{ . }}-{{ end }}&nbsp;<span class="year"></span>&nbsp;{{ upper $t }}. {{ T "all_rights" }}</p>
+    <div>
+      <div style="width:100%">
+        {{ T "copyright" }}{{ with $s.since }}&nbsp;{{ . }}-{{ end }}&nbsp;<span class="year"></span>&nbsp;{{ upper $t }}. {{ T "all_rights" }}
+      </div>
+      <div style="width:100%">
+	      {{ with $company.icp }}<a href="https://beian.miit.gov.cn">{{ . }}</a>{{ end }}{{ with $company.gongan_beian }} | {{ . }}{{ end }}
+      </div>
+    </div>
     {{- partialCached "top" .}}
   </div>
 </footer>
+
