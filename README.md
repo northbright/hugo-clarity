@@ -38,7 +38,7 @@ A [Hugo](https://gohugo.io/) theme based on [Hugo Clarity](https://github.com/ch
   | icp | string | ICP 备案号 |
   | gongan_beian | string | 公安备案号 |
 
-## Example Configuration in `/data/company.json`
+## Example Configuration in [exampleSite/data/company.json](exampleSite/data/company.json)
 
 ```
 {

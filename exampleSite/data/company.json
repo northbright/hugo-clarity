@@ -1,0 +1,20 @@
+{
+        "contacts": [
+            {
+                "name":"上海办事处",
+                "address":"徐汇区xx路xx号",
+                "phone_nums":["66666666", "88888888"],
+                "work_time":"10:00至18:00（周一休息）"
+            },
+            {
+                "name":"北京办事处",
+                "address":"海淀区xx路xx号",
+                "phone_nums":["33333333", "55555555"],
+                "work_time":"11:00至17:00（周六，日休息）"
+            }
+           ],
+        "weibo": "https://weibo.com/YOUR_WEIBO_ACCOUNT",
+        "weixin": {"id": "YOUR_WECHAT_ID", "keyword": "公司名称"},
+        "icp": "沪ICP备XX号",
+        "gongan_beian": "沪公安备XX号"
+}
