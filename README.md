@@ -2,6 +2,16 @@
 
 A [Hugo](https://gohugo.io/) theme based on [Hugo Clarity](https://github.com/chipzoller/hugo-clarity/) with customization for company website.
 
+## Set author and description of home page
+The template(`layouts/partials/opengraph.html`) reads the description from a page frontmatter. For the homepage, that would be in `content/_index.md`.
+
+```
++++
+author = "My Company"
+description = "My Company. Since 1984" # set your site's description here. will be use for home page content meta tags (seo).
++++
+```
+
 ## Customization
 * Show company contact information on side bar
   
