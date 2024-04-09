@@ -13,7 +13,12 @@ description = "My Company. Since 1984" # set your site's description here. will 
 ```
 
 ## Customization
-* Show company contact information on side bar
+* Show Hotline
+
+  Set `"hotline"` in `/data/company.json`.
+  If "hotline" is set(not empty), phone numbers of contacts will be **hidden**.
+
+* Show company contact information on the side bar
   
   Set `"contacts"`(slice) in `/data/company.json`
 
@@ -52,6 +57,7 @@ description = "My Company. Since 1984" # set your site's description here. will 
 
 ```
 {
+        "hotline": "400-xxx-xxxx",
         "contacts": [
             {
                 "name":"上海办事处",

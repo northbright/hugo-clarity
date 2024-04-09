@@ -1,16 +1,21 @@
 {{ $s := .Site.Params }}
+{{ $company := .Site.Data.company }}
 <aside class="sidebar">
   <section class="sidebar_inner">
     {{ $label := T "contact_us" }}
     <h2>{{ $label }}</h2>
-    {{ $company := .Site.Data.company }}
+    {{- with $company.hotline }}
+    <h2>{{ . }}</h2>
+    {{- end }}
     {{- range $contact := $company.contacts }}
       <h4>{{ $contact.name }}</h4>
         <div>
           {{- if $contact.address }}
             <li>{{ $contact.address }}</li>
           {{- end }}
+	  {{- if not $company.hotline }}
           <li>{{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}{{- end }}</li>
+	  {{- end }}
           {{- if $contact.work_time }}
             <li>{{ $contact.work_time }}</li>
           {{- end }}
