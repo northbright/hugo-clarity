@@ -15,10 +15,10 @@
           {{- end }}
 	  {{- if not $company.hotline }}
           <li>{{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}{{- end }}</li>
-	  {{- end }}
-          {{- if $contact.work_time }}
-            <li>{{ $contact.work_time }}</li>
+	  {{- if $contact.work_time }}
+          <li>{{ $contact.work_time }}</li>
           {{- end }}
+	  {{- end }}
         </div>
     {{- end }}
     <br>
