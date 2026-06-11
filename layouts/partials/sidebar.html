@@ -3,8 +3,12 @@
 <aside class="sidebar">
   <section class="sidebar_inner">
     {{ $label := T "contact_us" }}
+    {{ $hotline_label := T "enrollment_hotline" }}
+    {{ $campus_phone_num_label := T "campus_phone_num" }}
     <h2>{{ $label }}</h2>
-    {{- with $company.hotline }}
+    {{- if $company.hotline }}
+    <h4>{{ $hotline_label }}: {{ $company.hotline }}</h4>
+    {{- end }}
     <h2>{{ . }}</h2>
     {{- end }}
     {{- range $contact := $company.contacts }}
@@ -13,8 +17,7 @@
           {{- if $contact.address }}
             <li>{{ $contact.address }}</li>
           {{- end }}
-	  {{- if not $company.hotline }}
-          <li>{{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}{{- end }}</li>
+          <li>{{- $campus_phone_num_label }}{{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}</li>
 	  {{- if $contact.work_time }}
           <li>{{ $contact.work_time }}</li>
           {{- end }}

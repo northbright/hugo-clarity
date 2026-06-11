@@ -54,3 +54,9 @@ other = "{{ .ReadingTime }} min read"
 
 [contact_us]
 other = "联系我们"
+
+[enrollment_hotline]
+other = "报名热线"
+
+[campus_phone_num]
+other = "校区电话"
