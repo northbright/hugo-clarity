@@ -10,14 +10,13 @@
     {{- range $contact := $company.contacts }}
       <h4>{{ $contact.name }}</h4>
         <div>
-          {{- if $contact.address }}
-            <li>{{ $contact.address }}</li>
-          {{- end }}
-          <li>校区电话: {{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}</li>
-	  {{- if $contact.work_time }}
-          <li>{{ $contact.work_time }}</li>
-          {{- end }}
-	  {{- end }}
+        {{- if $contact.address }}
+        <li>{{ $contact.address }}</li>
+        {{- end }}
+        <li>校区电话: {{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}</li>
+	    {{- if $contact.work_time }}
+        <li>{{ $contact.work_time }}</li>
+        {{- end }}
         </div>
     {{- end }}
     <br>
