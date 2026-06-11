@@ -3,13 +3,9 @@
 <aside class="sidebar">
   <section class="sidebar_inner">
     {{ $label := T "contact_us" }}
-    {{ $hotline_label := T "enrollment_hotline" }}
-    {{ $campus_phone_num_label := T "campus_phone_num" }}
     <h2>{{ $label }}</h2>
-    {{- if $company.hotline }}
-    <h4>{{ $hotline_label }}: {{ $company.hotline }}</h4>
-    {{- end }}
-    <h2>{{ . }}</h2>
+    {{- with $company.hotline }}
+    <h4>报名热线: {{ . }}</h4>
     {{- end }}
     {{- range $contact := $company.contacts }}
       <h4>{{ $contact.name }}</h4>
@@ -17,7 +13,7 @@
           {{- if $contact.address }}
             <li>{{ $contact.address }}</li>
           {{- end }}
-          <li>{{- $campus_phone_num_label }}{{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}</li>
+          <li>校区电话: {{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}</li>
 	  {{- if $contact.work_time }}
           <li>{{ $contact.work_time }}</li>
           {{- end }}

@@ -54,9 +54,3 @@ other = "{{ .ReadingTime }} min read"
 
 [contact_us]
 other = "Contact Us"
-
-[enrollment_hotline]
-other = "Enrollment Hotline"
-
-[campus_phone_num]
-other = "Campus Phone Number"
