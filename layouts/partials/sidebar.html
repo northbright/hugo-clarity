@@ -13,7 +13,7 @@
         {{- if $contact.address }}
         <li>{{ $contact.address }}</li>
         {{- end }}
-        <li>校区电话: {{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}</li>
+        <li>校区电话: {{- range $i, $phone := $contact.phone_nums}}{{- if $i }},{{- end }} {{ $phone }}{{- end }}</li>
 	    {{- if $contact.work_time }}
         <li>{{ $contact.work_time }}</li>
         {{- end }}
